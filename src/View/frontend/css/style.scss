@@ -1,0 +1,348 @@
+@import "variables";
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+svg {
+  fill: $color-heading;
+  fill-opacity: 0.4;
+}
+
+a {
+  color: $color-heading;
+}
+
+a:hover {
+  color: $color-blue-light;
+}
+
+a:active {
+  color: $color-blue-dark;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url($image-background);
+  background-position: center;
+
+}
+
+.navigation {
+  width: 100%;
+  line-height: 3rem;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-white;
+
+  .logo {
+    width: 3rem;
+    margin-left: 1rem;
+    background-image: url($image-logo-mobile);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .navigation-urls {
+    position: relative;
+    top: 0.5rem;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+
+    a {
+      padding: 0 1rem;
+      font-family: $font-paragraph;
+      font-size: 1rem;
+      color: $color-heading;
+      text-decoration: none;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-white;
+
+  .content-wrapper {
+    width: 95%;
+  }
+
+  .subscribe-window {
+    .subscribe-title {
+      @include headingDefault();
+    }
+
+    .subscribe-info {
+      @include paragraphDefault();
+      margin: 5% 0;
+    }
+  }
+}
+
+.subscribe-window {
+  padding: 5% 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+
+  .subscribe-success-icon {
+    background-image: url($icon-subscribe-success);
+    height: 5rem;
+    margin: 5% 5% 0 5%;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+}
+
+#subscribe-form {
+  .submit-box {
+    display: flex;
+    height: 4rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid $color-border;
+    border-left: 3px solid $color-blue-light;
+
+    :hover {
+      border: 1px solid $color-blue-light;
+      border-left: 3px solid $color-blue-light;
+      @include inputFieldShadow();
+    }
+
+    :focus-within {
+      @include inputFieldShadow();
+    }
+
+    input[type=text] {
+      height: 100%;
+      width: 75%;
+      border: 0;
+      padding: 0 5%;
+      outline: none;
+      font-family: $font-paragraph;
+      font-style: normal;
+      font-weight: normal;
+      color: $color-paragraph;
+    }
+
+    button {
+      height: 100%;
+      width: 15%;
+      border: 0;
+      background-color: #FFFFFF;
+      background-image: url($icon-arrow);
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .terms-base {
+    margin: 5% 5%;
+    display: flex;
+    align-items: center;
+    font-family: $font-paragraph;
+    color: $color-paragraph;
+
+    #terms-accept {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.social-pages {
+  margin-top: 5%;
+
+  hr {
+    width: 90%;
+    margin: auto;
+    border: 0.5px solid $color-border;
+  }
+  .social-pages-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+    div {
+      height: 3rem;
+      width: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.5rem;
+      border: 1px solid #E3E3E4;
+      border-radius: 50%;
+    }
+
+    .social-page-fb:hover {
+      background: $social-icon-facebook-hover;
+      @include socialIconSelected();
+    }
+
+    .social-page-fb:active {
+      background: $social-icon-facebook-active;
+      @include socialIconSelected();
+    }
+
+    .social-page-ig:hover {
+      background: $social-icon-instagram-hover;
+      @include socialIconSelected();
+    }
+
+    .social-page-ig:active {
+      background: $social-icon-instagram-active;
+      @include socialIconSelected();
+    }
+
+    .social-page-tw:hover {
+      background: $social-icon-twitter-hover;
+      @include socialIconSelected();
+    }
+
+    .social-page-tw:active {
+      background: $social-icon-twitter-active;
+      @include socialIconSelected();
+    }
+
+    .social-page-yt:hover {
+      background: $social-icon-youtube-hover;
+      @include socialIconSelected();
+    }
+
+    .social-page-yt:active {
+      background: $social-icon-youtube-active;
+      @include socialIconSelected();
+    }
+  }
+}
+
+.side-image {
+  display: none;
+}
+
+.validation-error {
+  text-align: center;
+  color: red;
+  font-family: $font-paragraph;
+}
+
+@media only screen and (max-width: 350px) {
+  .navigation .navigation-urls {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 880px) {
+  html,
+  body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main {
+    width: 35%;
+    align-items: flex-start;
+    background-image: none;
+    background-color: $color-white;
+  }
+
+  .navigation {
+    margin: 4rem 0 1rem 0;
+    justify-content: space-evenly;
+
+    .logo {
+      background-image: url($image-logo-desktop);
+      width: 2rem;
+    }
+
+    .navigation-urls {
+      flex-direction: column;
+    }
+  }
+
+  .subscribe-window {
+    padding: 0 20%;
+
+    .subscribe-success-icon {
+      margin: 2% 0;
+    }
+  }
+
+  .side-image {
+    display: initial;
+    width: 65%;
+    background-image: url($image-background);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #subscribe-form {
+    .submit-box {
+      width: 100%;
+      position: relative;
+      left: 15%;
+    }
+
+    .terms-base {
+      margin: 5% 20%;
+    }
+  }
+
+  .social-pages {
+    width: 95%;
+    hr {
+      width: 60%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .navigation {
+    .logo {
+      background-image: url($image-logo-desktop);
+      width: 7rem;
+    }
+
+    .navigation-urls {
+      flex-direction: initial;
+      top: 0.4rem;
+    }
+  }
+}
+
+.admin-page {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  background-color: $color-white;
+
+  table {
+    margin: 0 auto;
+    width: 60%;
+  }
+  table, td, tr {
+    border: 0.5px solid black;
+  }
+}

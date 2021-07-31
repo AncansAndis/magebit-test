@@ -1,0 +1,58 @@
+$color-heading: #131821;
+$color-paragraph: #6A707B;
+$color-border: #E3E3E4;
+$color-blue-light: #4066A5;
+$color-blue-dark: #233759;
+$color-white: #F2F5FA;
+$font-heading: Georgia;
+$font-paragraph: Arial;
+
+$icon-arrow: "/media/assets/ic_arrow.png";
+$icon-facebook: "/media/assets/ic_facebook.svg";
+$icon-instagram: "/media/assets/ic_instagram.svg";
+$icon-youtube: "/media/assets/ic_youtube.svg";
+$icon-twitter: "/media/assets/ic_twitter.svg";
+$icon-subscribe-success: "/media/assets/ic_success.png";
+$image-background: "/media/assets/image_summer.png";
+$image-logo-desktop: "/media/assets/logo_pineapple_text.png";
+$image-logo-mobile: "/media/assets/logo_pineapple.png";
+
+$social-icon-facebook-hover: #4267B2;
+$social-icon-facebook-active: #2F4A80;
+$social-icon-instagram-hover: #C13584;
+$social-icon-instagram-active: #8F2762;
+$social-icon-twitter-hover: #1DA1F2;
+$social-icon-twitter-active: #177FBF;
+$social-icon-youtube-hover: #FF0000;
+$social-icon-youtube-active: #CC0000;
+
+@mixin inputFieldShadow {
+  box-shadow: 0 1rem 2rem rgba(106, 112, 123, 0.15);
+}
+
+@mixin paragraphDefault {
+  font-family: $font-paragraph;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  color: $color-paragraph;
+}
+
+@mixin headingDefault {
+  font-family: $font-heading;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 44px;
+  color: $color-heading;
+}
+
+@mixin socialIconSelected {
+  box-shadow: 0 20px 40px rgba(19, 24, 33, 0.3);
+  cursor: pointer;
+  svg {
+    fill: #FFFFFF;
+    fill-opacity: 1;
+  }
+}
